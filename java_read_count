@@ -1,0 +1,17 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+public class Main {
+
+    public static void main(String[] args) {
+        String filePath = "/Users/jd/Documents/db/public/index.html";
+        try {
+            String content = Files.readString(Paths.get(filePath));
+            int wordCount = content.split("\\s+").length;
+            System.out.println("Number of words: " + wordCount);
+        } catch (IOException e) {
+            System.out.println("An error occurred: " + e.getMessage());
+        }
+    }
+}
